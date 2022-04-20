@@ -1,0 +1,28 @@
+
+version: 2
+
+sources:
+  - name: dw
+    schema: DW
+
+    tables:
+      - name: Branch
+        description: Branch Master
+        identifier: Branch
+      - name: Customer
+        description: Customer Master
+        identifier: Customer
+
+models:
+  - name: stg__Branch
+    columns: 
+      - name: branch_id
+        tests: 
+          - unique
+          - not_null
+  - name: stg__Customer
+    columns: 
+      - name: customer_id
+        tests: 
+          - unique
+          - not_null
